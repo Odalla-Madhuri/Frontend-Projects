@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    .grid-container {
+      align-items: center;
+      justify-content:center;
+      display: grid;
+      grid-template-columns: 200px 150px 80px;
+      row-gap: 10px;
+      column-gap: 10px;
+      margin-top: 10px;
+    }
+    input {
+      font-size: 14px;
+      height: 30px;
+    }
+    .btn {
+      height: 35px;
+      background-color: rgb(8, 175, 8);
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      height: 35px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Todo App</h1>
+  <div class="grid-container">
+    <input id="todo-input" type="text" placeholder="Enter TODO items">
+    <input id="todo-date" type="date">
+    <button class="btn" onclick="addTodo();">Add</button>
+  </div>
+  <div class="todo-container grid-container"></div>
+
+  <script>
+    let todoList = [
+      {
+        item: 'complete Todo App',
+        dueDate: '09-11-2023'
+      },
+      {
+        item: 'Advance functions',
+        dueDate: '09-11-2023'
+      },
+      {
+        item: 'Myntra Clone',
+        dueDate: '10-11-2023'
+      }
+    ];
+    displayItems();
+
+    function addTodo() {
+      let inputElement = document.querySelector('#todo-input');
+      let dateElement = document.querySelector('#todo-date');
+      let todoItem = inputElement.value;
+      let todoDate = dateElement.value;
+      inputElement.value = '';
+      dateElement.value = '';
+      todoList.push(todoItem, todoDate);
+      displayItems();
+    }
+
+    function displayItems() {
+      let containerElement = document.querySelector('.todo-container');
+
+      let newHtml = '';
+      for (let i = 0; i < todoList.length; i++) {
+        let item = todoList[i].item;
+        let dueDate = todoList[i].dueDate;
+        newHtml += `
+          <span>${item}</span>
+          <span>${dueDate}</span>
+          <button onClick = "todoList.splice(${i}, 1); displayItems();">Delete</button>
+        `;
+      }
+      containerElement.innerHTML = newHtml;
+    }
+  </script>
+</body>
+</html>

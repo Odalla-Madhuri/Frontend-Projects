@@ -1,0 +1,32 @@
+/* body {
+  background: linear-gradient( to bottom right, rgba(79,51,176,1.0),rgba(210,53,165));
+  height: 83vh;
+} */
+
+#calculator {
+  margin: 100px 40%;
+  border: 1px solid rgb(199, 194, 194);
+  border-radius: 15px;
+  width: 250px;
+  padding-bottom: 10px;
+  background-color: antiquewhite;
+}
+
+#display {
+  margin: 10px 15px;
+  width: 85%;
+  font-size: 25px;
+  text-align: end;
+}
+
+#btn-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  width: 45px;
+  height: 45px;
+  margin: 3px;
+}

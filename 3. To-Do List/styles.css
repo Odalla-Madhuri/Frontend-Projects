@@ -1,0 +1,41 @@
+body {
+  font-family: Arial;
+}
+
+#main-heading {
+  text-align: center;
+}
+
+.grid-container {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 200px 150px 80px;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-top: 10px;
+}
+
+input {
+  font-size: 14px;
+  height: 30px;
+}
+
+.btn {
+  height: 35px;
+  padding: 5px 10px;
+  background-color: rgb(10, 192, 10);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button {
+  height: 35px;
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
